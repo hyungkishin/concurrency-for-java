@@ -22,9 +22,9 @@ public class ThreadStopMainV2 {
         public void run() {
 
             try {
-                while (true) {
+                while (true) { // 인터럽트 체크 안함
                     log("작업 중");
-                    Thread.sleep(3000);
+                    Thread.sleep(3000); // 여기서만 인터럽트 발생
                 }
             } catch (InterruptedException e) {
                 log("work 스레드 인터럽트 상태 2 = " + Thread.currentThread().isInterrupted());
