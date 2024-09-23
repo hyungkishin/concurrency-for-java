@@ -19,7 +19,6 @@ public class MyPrinterV2 {
             String input = userInput.nextLine();
 
             if (input.equals("q")) {
-                printer.work = false;
                 thread.interrupt();
                 break;
             }
@@ -29,13 +28,11 @@ public class MyPrinterV2 {
     }
 
     static class Printer implements Runnable {
-        volatile boolean work = true; // 여러 스레드가 동시에 접근하는 변수에는 volatile 키워드를 붙어주어야 안전하다. ( 동시성 )
-
         Queue<String> jobQueue = new ConcurrentLinkedQueue<>();
 
         @Override
         public void run() {
-            while (work) {
+            while (!Thread.interrupted()) {
                 if (jobQueue.isEmpty()) {
                     continue;
                 }
