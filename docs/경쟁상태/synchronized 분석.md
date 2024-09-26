@@ -63,5 +63,3 @@ public class BankAccountV2 implements BankAccount {
   - 10 차선 도로 가 Synchronized 만나면 1차선으로 변경되는것이다. (병목 현상)
 - 장점: 동시성 문제를 해결 ( 경쟁상태 / 레이스컨디션 )
   - 대응 : 1차선 구간을 짧게 만들면 된다.
-
-
