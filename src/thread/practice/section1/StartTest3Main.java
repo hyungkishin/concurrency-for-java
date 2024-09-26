@@ -1,19 +1,11 @@
-package thread.start.practice;
+package thread.practice.section1;
 
 import static util.MyLogger.log;
 
-public class StartTest1Main {
+public class StartTest3Main {
 
     public static void main(String[] args) {
-        CounterThread counterThread = new CounterThread();
-        counterThread.start();
-    }
-
-   static class CounterThread extends Thread {
-
-        @Override
-        public void run() {
-
+        Thread thread = new Thread(() -> {
             for (int i = 1; i <= 5; i++) {
                 try {
                     Thread.sleep(1000);
@@ -22,6 +14,8 @@ public class StartTest1Main {
                     throw new RuntimeException(e);
                 }
             }
-        }
+        }, "counter");
+        thread.start();
     }
+
 }

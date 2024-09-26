@@ -1,4 +1,4 @@
-package thread.start.practice;
+package thread.practice.section1;
 
 import static util.MyLogger.log;
 
