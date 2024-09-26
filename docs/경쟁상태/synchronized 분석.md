@@ -56,3 +56,12 @@ public class BankAccountV2 implements BankAccount {
 - CPU 실행 스케줄링에 들어가지도 않고 마치 sleep 상태 처럼 대기하는것이다.
 
 > volatile 또는 Synchronized 나 Lock 같은 동기화 블록을 쓰면, 자동으로 메모리 가시성 문제가 해결된다.
+
+
+### 장/단점
+- 단점: 쓰레드가 줄을 서서 한번에 하나씩 실행해서 성능이 떨어진다.
+  - 10 차선 도로 가 Synchronized 만나면 1차선으로 변경되는것이다. (병목 현상)
+- 장점: 동시성 문제를 해결 ( 경쟁상태 / 레이스컨디션 )
+  - 대응 : 1차선 구간을 짧게 만들면 된다.
+
+
